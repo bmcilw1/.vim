@@ -1,0 +1,22 @@
+priority -50
+
+###########################################################################
+#                            Custom Snippets                            #
+###########################################################################
+
+global !p
+def x(snip):
+	if snip.ft.startswith("x"):
+		snip.rv = '/'
+	else:
+		snip.rv = ""
+endglobal
+
+snippet divl "<div>" w
+<div>$0</div>
+endsnippet
+
+snippet divl. "<div> with class" w
+<div`!p snip.rv=' class="' if t[1] else ""`${1:name}`!p snip.rv = '"' if t[1] else ""`>$0</div>
+endsnippet
+
